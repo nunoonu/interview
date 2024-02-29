@@ -5,7 +5,9 @@ Interview microservice for managing candidates for interviewers.
 use Header.Authorization to pass a token, value is Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJ1c2VySWQiOiIxZmZkOTgwZi0wZjFlLTQzNTYtYTZlYy1iYzUxOTg0MGYxMjkiLCJleHAiOjE3MDkyMjc1OTMsImlhdCI6MTcwOTA1NDc5MywiaXNzIjoiQmlrYXNoIn0.mItrocaqmkkndBQuMhWB8D2nYQ8HhP1oqIjLLsZwndw
 
 
-# Script for creating(DDL) tables and triggers for created_at and updated_at.
+# Table creation
+
+Script for creating(DDL) tables and triggers for created_at and updated_at.
 
 
 ## Table people
@@ -97,8 +99,9 @@ for each row
 execute procedure trigger_insert_only_created_at_timestamp();
 
 
+# Store procedure
 
-# Store procedure for setting created_at and updated_at
+Store procedure for setting created_at and updated_at
 
 CREATE OR REPLACE FUNCTION trigger_insert_only_created_at_timestamp()
 RETURNS TRIGGER AS $$
