@@ -21,15 +21,15 @@ CREATE TABLE people (
     updated_at timestamptz NOT null
 );
 
-create trigger set_people_insert
-before insert on people
-for each row
-execute procedure trigger_insert_timestamp();
+CREATE TRIGGER set_people_insert
+BEFORE INSERT on people
+FOR EACH ROW
+EXECUTE PROCEDURE trigger_insert_timestamp();
 
-create trigger set_people_update
-before update on people
-for each row
-execute procedure trigger_update_timestamp();
+CREATE TRIGGER set_people_update
+BEFORE UPDATE on people
+FOR EACH ROW
+EXECUTE PROCEDURE trigger_update_timestamp();
 
 
 
@@ -46,15 +46,15 @@ CREATE TABLE appointment (
     updated_at timestamptz NOT null
 );
 
-create trigger set_appointment_insert
-before insert on appointment
-for each row
-execute procedure trigger_insert_timestamp();
+CREATE TRIGGER set_appointment_insert
+BEFORE INSERT on appointment
+FOR EACH ROW
+EXECUTE PROCEDURE trigger_insert_timestamp();
 
-create trigger set_appointment_update
-before update on appointment
-for each row
-execute procedure trigger_update_timestamp();
+CREATE TRIGGER set_appointment_update
+BEFORE UPDATE on appointment
+FOR EACH ROW
+EXECUTE PROCEDURE trigger_update_timestamp();
 
 
 
@@ -69,15 +69,15 @@ CREATE TABLE comment (
     updated_at timestamptz NOT null
 );
 
-create trigger set_comment_insert
-before insert on comment
-for each row
-execute procedure trigger_insert_timestamp();
+CREATE TRIGGER set_comment_insert
+BEFORE INSERT on comment
+FOR EACH ROW
+EXECUTE PROCEDURE trigger_insert_timestamp();
 
-create trigger set_comment_update
-before update on comment
-for each row
-execute procedure trigger_update_timestamp();
+CREATE TRIGGER set_comment_update
+BEFORE UPDATE on comment
+FOR EACH ROW
+EXECUTE PROCEDURE trigger_update_timestamp();
 
 
 
@@ -93,10 +93,10 @@ CREATE TABLE history (
     created_at timestamptz NOT NULL
 );
 
-create trigger set_history_insert
-before insert on history
-for each row
-execute procedure trigger_insert_only_created_at_timestamp();
+CREATE TRIGGER set_history_insert
+BEFORE INSERT on history
+FOR EACH ROW
+EXECUTE PROCEDURE trigger_insert_only_created_at_timestamp();
 
 
 # Store procedure
