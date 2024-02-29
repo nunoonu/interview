@@ -56,7 +56,7 @@ execute procedure trigger_update_timestamp();
 
 
 
-Table comment
+## Table comment
 
 CREATE TABLE comment (
     id VARCHAR(255) PRIMARY KEY NOT NULL DEFAULT (uuid_generate_v4()),
@@ -79,7 +79,7 @@ execute procedure trigger_update_timestamp();
 
 
 
-Table history
+## Table history
 
 CREATE TABLE history (
     id VARCHAR(255) PRIMARY KEY NOT NULL DEFAULT (uuid_generate_v4()),
@@ -98,7 +98,7 @@ execute procedure trigger_insert_only_created_at_timestamp();
 
 
 
-//Store procedure for setting created_at and updated_at
+# Store procedure for setting created_at and updated_at
 
 CREATE OR REPLACE FUNCTION trigger_insert_only_created_at_timestamp()
 RETURNS TRIGGER AS $$
